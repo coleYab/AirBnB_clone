@@ -1,6 +1,6 @@
 # 0x00. AirBnB clone - The console
 
-## The AirBnB project is a clone of the AiRBnB to demonstrate how fullstack applicstion is donw
+## The AirBnB project is a clone of the AiRBnB to demonstrate how fullstack application is done
 
 
 ### Components
