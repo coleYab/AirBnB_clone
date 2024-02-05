@@ -6,7 +6,7 @@
 ### Components
 - Console.py
 - - is the CLI application for the project
-	The CLI will take command and execute it
-	Usage: start the CLI ./console.py then start typing command
+	The CLI will take command and execute it.<br>
+	Usage: start the CLI ./console.py then start typing command.<br>
 	First type help to see the list of available commands
 
