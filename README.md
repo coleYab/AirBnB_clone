@@ -34,7 +34,7 @@ EOF  all  count  create  destroy  help  quit  show  update
 ```
 
 ### More Interactive Examples
-'''bash
+```bash
 (hbnb) User.all()
 [[User] (246c227a-d5c1-403d-9bc7-6a47bb9f0f68) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611352), 'updated_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611363), 'password': '63a9f0ea7bb98050796b649e85481845', 'email': 'airbnb@mail.com', 'id': '246c227a-d5c1-403d-9bc7-6a47bb9f0f68'}, [User] (38f22813-2753-4d42-b37c-57a17f1e4f88) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848279), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848291), 'password': 'b9be11166d72e9e3ae7fd407165e4bd2', 'email': 'airbnb@mail.com', 'id': '38f22813-2753-4d42-b37c-57a17f1e4f88'}]
 (hbnb) User.count()
@@ -44,7 +44,7 @@ EOF  all  count  create  destroy  help  quit  show  update
 (hbnb) User.show("Bar")
 ** no instance found **
 (hbnb) quit
-'''
+```
 ## Models
 
 The folder [models](./models/) contains all the classes used in this project.
