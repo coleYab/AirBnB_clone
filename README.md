@@ -76,7 +76,7 @@ The test for the classes are in the [test_models](./tests/test_models/) folder.
 
 ## Authors
 
-- **Azziz Adio** ~ [adioadeyoriazeez@gmail.com](https://github.com/) : 
+- **Azeez Adio** ~ [adioadeyoriazeez@gmail.com](https://github.com/azeez-abp) : 
 
 - **Yeabsira Moges** - [yabume123@gmail.com](https://github.com/coleYab):
 
