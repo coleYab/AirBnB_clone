@@ -1,12 +1,84 @@
-# 0x00. AirBnB clone - The console
+# AirBnB clone - The console
 
-## The AirBnB project is a clone of the AiRBnB to demonstrate how fullstack application is done
+## Description
+
+This team project is part of the ALX School Full-Stack Software Engineer program.
+It's the first step towards building a first full web application: an AirBnB clone.
+This first step consists of a custom command-line interface for data management, and the base classes for the storage of this data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
+
+## Usage
+
+The console works both in interactive mode and non-interactive mode, much like a Unix shell.
+It prints a prompt **(hbnb)** and waits for the user for input.
+
+Command | Example
+------- | -------
+Run the console | ```./console.py```
+Quit the console | ```(hbnb) quit```
+Display the help for a command | ```(hbnb) help <command>```
+Create an object (prints its id)| ```(hbnb) create <class>```
+Show an object | ```(hbnb) show <class> <id>``` or ```(hbnb) <class>.show(<id>)```
+Destroy an object | ```(hbnb) destroy <class> <id>``` or ```(hbnb) <class>.destroy(<id>)```
+Show all objects, or all instances of a class | ```(hbnb) all``` or ```(hbnb) all <class>```
+Update an attribute of an object | ```(hbnb) update <class> <id> <attribute name> "<attribute value>"``` or ```(hbnb) <class>.update(<id>, <attribute name>, "<attribute value>")```
+
+Non-interactive mode example
+
+```bash
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  count  create  destroy  help  quit  show  update
+```
+
+### More Interactive Examples
+'''bash
+(hbnb) User.all()
+[[User] (246c227a-d5c1-403d-9bc7-6a47bb9f0f68) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611352), 'updated_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611363), 'password': '63a9f0ea7bb98050796b649e85481845', 'email': 'airbnb@mail.com', 'id': '246c227a-d5c1-403d-9bc7-6a47bb9f0f68'}, [User] (38f22813-2753-4d42-b37c-57a17f1e4f88) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848279), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848291), 'password': 'b9be11166d72e9e3ae7fd407165e4bd2', 'email': 'airbnb@mail.com', 'id': '38f22813-2753-4d42-b37c-57a17f1e4f88'}]
+(hbnb) User.count()
+2
+(hbnb) User.show("246c227a-d5c1-403d-9bc7-6a47bb9f0f68")
+[User] (246c227a-d5c1-403d-9bc7-6a47bb9f0f68) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611352), 'updated_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611363), 'password': '63a9f0ea7bb98050796b649e85481845', 'email': 'airbnb@mail.com', 'id': '246c227a-d5c1-403d-9bc7-6a47bb9f0f68'}
+(hbnb) User.show("Bar")
+** no instance found **
+(hbnb) quit
+'''
+## Models
+
+The folder [models](./models/) contains all the classes used in this project.
+
+File | Description | Attributes
+---- | ----------- | ----------
+[base_model.py](./models/base_model.py) | BaseModel class for all the other classes | id, created_at, updated_at
+[user.py](./models/user.py) | User class for future user information | email, password, first_name, last_name
+[amenity.py](./models/amenity.py) | Amenity class for future amenity information | name
+[city.py](./models/city.py) | City class for future location information | state_id, name
+[state.py](./models/state.py) | State class for future location information | name
+[place.py](./models/place.py) | Place class for future accomodation information | city_id, user_id, name, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
+[review.py](./models/review.py) | Review class for future user/host review information | place_id, user_id, text
+
+## File storage
+
+The folder [engine](./models/engine/) manages the serialization and deserialization of all the data, following a JSON format.
+
+A FileStorage class is defined in [file_storage.py](./models/engine/file_storage.py) with methods to follow this flow:
+```<object> -> to_dict() -> <dictionary> -> JSON dump -> <json string> -> FILE -> <json string> -> JSON load -> <dictionary> -> <object>```
+
+The [__init__.py](./models/__init__.py) file contains the instantiation of the FileStorage class called **storage**, followed by a call to the method reload() on that instance.
+This allows the storage to be reloaded automatically at initialization, which recovers the serialized data.
+
+## Tests
+
+All the code is tested with the **unittest** module.
+The test for the classes are in the [test_models](./tests/test_models/) folder.
+
+## Authors
+
+- **Azziz Adio** ~ [adioadeyoriazeez@gmail.com](https://github.com/) : 
+
+- **Yeabsira Moges** - [yabume123@gmail.com](https://github.com/coleYab):
 
 
-### Components
-- Console.py
-- - is the CLI application for the project
-	The CLI will take command and execute it.<br>
-	Usage: start the CLI ./console.py then start typing command.<br>
-	First type help to see the list of available commands
 
